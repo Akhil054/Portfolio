@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Code2, Database, Wrench, Palette, Users, Lightbulb } from "lucide-react";
 
+// Skills component with circular progress indicators
+
 // Circular Progress Component
 const CircularProgress = ({ value, children }: { value: number; children: React.ReactNode }) => {
   const circumference = 2 * Math.PI * 40;
