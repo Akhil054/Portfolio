@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 
+// Clean skills component without visual indicators
+
 const Skills = () => {
   const skillCategories = [
     {
