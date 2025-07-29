@@ -35,44 +35,61 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-20">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="mb-6">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">
-              Creative{" "}
-              <span className="text-gradient">Developer</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              I craft digital experiences that blend innovative design with cutting-edge technology
-            </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          {/* Left side - Photo */}
+          <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
+            <div className="relative">
+              <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  alt="Alex Chen - Creative Developer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent"></div>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="hero" className="group">
-              View My Work
-              <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg" className="hover-lift">
-              <Download className="w-5 h-5 mr-2" />
-              Download CV
-            </Button>
-          </div>
+          {/* Right side - Text */}
+          <div className="order-1 lg:order-2 text-center lg:text-left">
+            <div className="mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold mb-4">
+                Creative{" "}
+                <span className="text-gradient">Developer</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+                I craft digital experiences that blend innovative design with cutting-edge technology
+              </p>
+            </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6">
-            {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "#", label: "Email" },
-            ].map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                className="w-12 h-12 rounded-full bg-secondary/50 backdrop-blur-sm flex items-center justify-center hover-lift hover-glow group"
-                aria-label={label}
-              >
-                <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
-            ))}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
+              <Button variant="hero" className="group">
+                View My Work
+                <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+              </Button>
+              <Button variant="outline" size="lg" className="hover-lift">
+                <Download className="w-5 h-5 mr-2" />
+                Download CV
+              </Button>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex justify-center lg:justify-start space-x-6">
+              {[
+                { icon: Github, href: "#", label: "GitHub" },
+                { icon: Linkedin, href: "#", label: "LinkedIn" },
+                { icon: Mail, href: "#", label: "Email" },
+              ].map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="w-12 h-12 rounded-full bg-secondary/50 backdrop-blur-sm flex items-center justify-center hover-lift hover-glow group"
+                  aria-label={label}
+                >
+                  <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
