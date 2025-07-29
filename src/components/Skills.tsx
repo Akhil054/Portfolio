@@ -6,15 +6,30 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend Development",
-      skills: ["React/Next.js", "TypeScript", "CSS/Tailwind", "JavaScript"]
+      skills: [
+        { name: "React/Next.js", logo: "⚛️" },
+        { name: "TypeScript", logo: "🔷" },
+        { name: "CSS/Tailwind", logo: "🎨" },
+        { name: "JavaScript", logo: "📝" }
+      ]
     },
     {
       title: "Backend Development", 
-      skills: ["Node.js", "Python", "PostgreSQL", "GraphQL"]
+      skills: [
+        { name: "Node.js", logo: "🟢" },
+        { name: "Python", logo: "🐍" },
+        { name: "PostgreSQL", logo: "🐘" },
+        { name: "GraphQL", logo: "📊" }
+      ]
     },
     {
       title: "Tools & Technologies",
-      skills: ["Git/GitHub", "Docker", "AWS/Cloud", "Figma"]
+      skills: [
+        { name: "Git/GitHub", logo: "🌐" },
+        { name: "Docker", logo: "🐳" },
+        { name: "AWS/Cloud", logo: "☁️" },
+        { name: "Figma", logo: "🎯" }
+      ]
     }
   ];
 
@@ -37,50 +52,15 @@ const Skills = () => {
                 <h3 className="text-xl font-semibold mb-6 text-center">{category.title}</h3>
                 <div className="space-y-3">
                   {category.skills.map((skill) => (
-                    <div key={skill} className="text-center">
-                      <span className="text-sm font-medium text-muted-foreground">{skill}</span>
+                    <div key={skill.name} className="flex items-center justify-center gap-3">
+                      <span className="text-2xl">{skill.logo}</span>
+                      <span className="text-sm font-medium text-muted-foreground">{skill.name}</span>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Education */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Education</h3>
-          <div className="max-w-4xl mx-auto space-y-6">
-            {[
-              {
-                degree: "Bachelor of Computer Science",
-                school: "University of Technology",
-                period: "2018 - 2022",
-                description: "Specialized in Software Engineering and Web Development. Graduated with honors."
-              },
-              {
-                degree: "Full Stack Web Development Bootcamp",
-                school: "Tech Academy",
-                period: "2022",
-                description: "Intensive 6-month program covering modern web technologies and frameworks."
-              }
-            ].map((edu) => (
-              <Card key={edu.degree} className="hover-lift">
-                <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-semibold">{edu.degree}</h4>
-                      <p className="text-primary font-medium">{edu.school}</p>
-                    </div>
-                    <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full mt-2 md:mt-0">
-                      {edu.period}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground">{edu.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
 
         {/* Experience */}

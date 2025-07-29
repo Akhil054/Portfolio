@@ -82,6 +82,42 @@ const About = () => {
             ))}
           </div>
         </div>
+
+        {/* Education */}
+        <div className="mt-20">
+          <h3 className="text-3xl font-bold text-center mb-12">Education</h3>
+          <div className="max-w-4xl mx-auto space-y-6">
+            {[
+              {
+                degree: "Bachelor of Computer Science",
+                school: "University of Technology",
+                period: "2018 - 2022",
+                description: "Specialized in Software Engineering and Web Development. Graduated with honors."
+              },
+              {
+                degree: "Full Stack Web Development Bootcamp",
+                school: "Tech Academy",
+                period: "2022",
+                description: "Intensive 6-month program covering modern web technologies and frameworks."
+              }
+            ].map((edu) => (
+              <Card key={edu.degree} className="hover-lift">
+                <CardContent className="p-6">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                      <h4 className="text-xl font-semibold">{edu.degree}</h4>
+                      <p className="text-primary font-medium">{edu.school}</p>
+                    </div>
+                    <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full mt-2 md:mt-0">
+                      {edu.period}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground">{edu.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
