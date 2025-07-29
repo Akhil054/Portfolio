@@ -63,101 +63,106 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Certifications */}
+        {/* Certifications & Workshops */}
         <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Certifications</h3>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "AWS Certified Solutions Architect",
-                issuer: "Amazon Web Services",
-                date: "2023",
-                badge: "☁️"
-              },
-              {
-                title: "Google Cloud Professional Developer",
-                issuer: "Google Cloud",
-                date: "2023",
-                badge: "🌐"
-              },
-              {
-                title: "React Developer Certification",
-                issuer: "Meta",
-                date: "2022",
-                badge: "⚛️"
-              },
-              {
-                title: "JavaScript Algorithms & Data Structures",
-                issuer: "freeCodeCamp",
-                date: "2022",
-                badge: "📝"
-              }
-            ].map((cert) => (
-              <Card key={cert.title} className="hover-lift">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl">{cert.badge}</div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-lg mb-1">{cert.title}</h4>
-                      <p className="text-primary font-medium mb-2">{cert.issuer}</p>
-                      <span className="text-sm text-muted-foreground bg-secondary/50 px-2 py-1 rounded">
-                        {cert.date}
-                      </span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Certifications */}
+            <div>
+              <h3 className="text-3xl font-bold text-center mb-12">Certifications</h3>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "AWS Certified Solutions Architect",
+                    issuer: "Amazon Web Services",
+                    date: "2023",
+                    badge: "☁️"
+                  },
+                  {
+                    title: "Google Cloud Professional Developer",
+                    issuer: "Google Cloud",
+                    date: "2023",
+                    badge: "🌐"
+                  },
+                  {
+                    title: "React Developer Certification",
+                    issuer: "Meta",
+                    date: "2022",
+                    badge: "⚛️"
+                  },
+                  {
+                    title: "JavaScript Algorithms & Data Structures",
+                    issuer: "freeCodeCamp",
+                    date: "2022",
+                    badge: "📝"
+                  }
+                ].map((cert) => (
+                  <Card key={cert.title} className="hover-lift">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="text-3xl">{cert.badge}</div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-lg mb-1">{cert.title}</h4>
+                          <p className="text-primary font-medium mb-2">{cert.issuer}</p>
+                          <span className="text-sm text-muted-foreground bg-secondary/50 px-2 py-1 rounded">
+                            {cert.date}
+                          </span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
 
-        {/* Workshops */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Workshops & Training</h3>
-          <div className="max-w-4xl mx-auto space-y-6">
-            {[
-              {
-                title: "Advanced React Patterns Workshop",
-                organizer: "React Conference 2023",
-                date: "June 2023",
-                description: "Deep dive into advanced React patterns, performance optimization, and modern best practices.",
-                type: "Workshop"
-              },
-              {
-                title: "DevOps & CI/CD Pipeline Training",
-                organizer: "TechLearn Academy",
-                date: "March 2023",
-                description: "Comprehensive training on Docker, Kubernetes, Jenkins, and modern deployment strategies.",
-                type: "Training"
-              },
-              {
-                title: "UI/UX Design Thinking Workshop",
-                organizer: "Design Guild",
-                date: "January 2023",
-                description: "User-centered design principles, prototyping, and design systems creation.",
-                type: "Workshop"
-              }
-            ].map((workshop) => (
-              <Card key={workshop.title} className="hover-lift">
-                <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-semibold">{workshop.title}</h4>
-                      <p className="text-primary font-medium">{workshop.organizer}</p>
-                    </div>
-                    <div className="flex flex-col sm:flex-row gap-2 mt-2 md:mt-0">
-                      <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">
-                        {workshop.type}
-                      </span>
-                      <span className="text-sm text-muted-foreground bg-primary/10 px-3 py-1 rounded-full">
-                        {workshop.date}
-                      </span>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground">{workshop.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {/* Workshops & Training */}
+            <div>
+              <h3 className="text-3xl font-bold text-center mb-12">Workshops & Training</h3>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Advanced React Patterns Workshop",
+                    organizer: "React Conference 2023",
+                    date: "June 2023",
+                    description: "Deep dive into advanced React patterns and performance optimization.",
+                    type: "Workshop"
+                  },
+                  {
+                    title: "DevOps & CI/CD Pipeline Training",
+                    organizer: "TechLearn Academy",
+                    date: "March 2023",
+                    description: "Comprehensive training on Docker, Kubernetes, and deployment strategies.",
+                    type: "Training"
+                  },
+                  {
+                    title: "UI/UX Design Thinking Workshop",
+                    organizer: "Design Guild",
+                    date: "January 2023",
+                    description: "User-centered design principles and design systems creation.",
+                    type: "Workshop"
+                  }
+                ].map((workshop) => (
+                  <Card key={workshop.title} className="hover-lift">
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <h4 className="text-lg font-semibold">{workshop.title}</h4>
+                          <p className="text-primary font-medium">{workshop.organizer}</p>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <span className="text-xs text-muted-foreground bg-secondary/50 px-2 py-1 rounded">
+                            {workshop.type}
+                          </span>
+                          <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded">
+                            {workshop.date}
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{workshop.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
