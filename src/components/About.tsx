@@ -67,26 +67,9 @@ const About = () => {
             </div>
           </div>
 
-          {/* Highlights Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {highlights.map(({ icon: Icon, title, description }) => (
-              <Card key={title} className="hover-lift group">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h4 className="font-semibold mb-2">{title}</h4>
-                  <p className="text-sm text-muted-foreground">{description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Education */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Education</h3>
-          <div className="max-w-4xl mx-auto space-y-6">
+          {/* Education Section */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold mb-6">Education</h3>
             {[
               {
                 degree: "Bachelor of Computer Science",
@@ -118,6 +101,7 @@ const About = () => {
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

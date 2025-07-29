@@ -38,15 +38,16 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left side - Photo */}
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+            <div className="relative group">
+              <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-elegant hover-lift">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
                   alt="Alex Chen - Creative Developer"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-1 rounded-full bg-gradient-primary opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
           </div>
 
