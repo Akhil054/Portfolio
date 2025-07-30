@@ -7,28 +7,25 @@ const Skills = () => {
     {
       title: "Frontend Development",
       skills: [
-        { name: "React/Next.js", logo: "⚛️" },
-        { name: "TypeScript", logo: "🔷" },
-        { name: "CSS/Tailwind", logo: "🎨" },
-        { name: "JavaScript", logo: "📝" }
+        { name: "JavaScript", logo: "📝" },
+        { name: "React/React-Native", logo: "⚛️" },
+        { name: "HTML/CSS", logo: "👨‍💻" },
+        { name: "BootStrap", logo: "🅱️" },
       ]
     },
     {
       title: "Backend Development", 
       skills: [
         { name: "Node.js", logo: "🟢" },
-        { name: "Python", logo: "🐍" },
-        { name: "PostgreSQL", logo: "🐘" },
-        { name: "GraphQL", logo: "📊" }
+        { name: "SQL", logo: "🗄️" },
       ]
     },
     {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git/GitHub", logo: "🌐" },
-        { name: "Docker", logo: "🐳" },
-        { name: "AWS/Cloud", logo: "☁️" },
-        { name: "Figma", logo: "🎯" }
+        { name: "Git/GitHub", logo: "🛠️" },
+        { name: "Postman", logo: "📬" },                 
+        { name: "Salesforce CRM", logo: "☁️" },  
       ]
     }
   ];
@@ -63,6 +60,49 @@ const Skills = () => {
           ))}
         </div>
 
+        {/* Experience */}
+        <div className="mt-20">
+          <h3 className="text-3xl font-bold text-center mb-12">Experience</h3>
+          <div className="max-w-4xl mx-auto space-y-6">
+            {[
+              {
+                role: "Software Development Intern",
+                company: "Cognitix Software & Consultancy Pvt Ltd ",
+                period: "Jan 2025 - Jul 2025",
+                description: "Developed responsive App using Reactjs & React-Native. Collaborated with Technical Head on client projects.",
+                achievements: ["Completed hands-on training in JavaScript, React.js, and Node.js for full-stack development.", "Built modular frontend components and integrated REST APIs for web applications.", "Gained practical experience in state management, backend logic, and deployment workflows."]
+              },
+              {
+                role: "Web Developer Intern",
+                company: "Talent Battle Pvt Ltd",
+                period: "Dec 2023 - Feb 2024",
+                description: "Focused on UI/UX implementation & Database Management. Worked with design team to create pixel-perfect interfaces.",
+                achievements: ["Implemented responsive designs", "Gained hands-on experience in basic server-side logic and full-stack workflows.", "Improved skills in version control (Git) and debugging techniques."]
+              }
+            ].map((exp) => (
+              <Card key={exp.role} className="hover-lift">
+                <CardContent className="p-6">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                      <h4 className="text-xl font-semibold">{exp.role}</h4>
+                      <p className="text-primary font-medium">{exp.company}</p>
+                    </div>
+                    <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full mt-2 md:mt-0">
+                      {exp.period}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground mb-4">{exp.description}</p>
+                  <div className="space-y-1">
+                    {exp.achievements.map((achievement) => (
+                      <p key={achievement} className="text-sm text-muted-foreground">• {achievement}</p>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Certifications & Workshops */}
         <div className="mt-20">
           <div className="grid lg:grid-cols-2 gap-12">
@@ -72,29 +112,29 @@ const Skills = () => {
               <div className="space-y-6">
                 {[
                   {
-                    title: "AWS Certified Solutions Architect",
-                    issuer: "Amazon Web Services",
-                    date: "2023",
-                    badge: "☁️"
+                    title: "Data Analytics and Visualization Job Simulation",
+                    issuer: "Forage",
+                    date: "2024",
+                    badge: "📈"
                   },
                   {
-                    title: "Google Cloud Professional Developer",
-                    issuer: "Google Cloud",
-                    date: "2023",
-                    badge: "🌐"
+                    title: "Cybersecurity Job Simulation",
+                    issuer: "Forage",
+                    date: "2024",
+                    badge: "🔐"
                   },
-                  {
-                    title: "React Developer Certification",
-                    issuer: "Meta",
-                    date: "2022",
-                    badge: "⚛️"
-                  },
-                  {
-                    title: "JavaScript Algorithms & Data Structures",
-                    issuer: "freeCodeCamp",
-                    date: "2022",
-                    badge: "📝"
-                  }
+                  // {
+                  //   title: "React Developer Certification",
+                  //   issuer: "Meta",
+                  //   date: "2022",
+                  //   badge: "⚛️"
+                  // },
+                  // {
+                  //   title: "JavaScript Algorithms & Data Structures",
+                  //   issuer: "freeCodeCamp",
+                  //   date: "2022",
+                  //   badge: "📝"
+                  // }
                 ].map((cert) => (
                   <Card key={cert.title} className="hover-lift">
                     <CardContent className="p-6">
@@ -116,30 +156,30 @@ const Skills = () => {
 
             {/* Workshops & Training */}
             <div>
-              <h3 className="text-3xl font-bold text-center mb-12">Workshops & Training</h3>
+              <h3 className="text-3xl font-bold text-center mb-12">Workshops</h3>
               <div className="space-y-6">
                 {[
                   {
-                    title: "Advanced React Patterns Workshop",
-                    organizer: "React Conference 2023",
-                    date: "June 2023",
-                    description: "Deep dive into advanced React patterns and performance optimization.",
+                    title: "INVICTA InterCollege Event",
+                    organizer: "Team Mavericks KITCOEK",
+                    date: "2024",
+                    description: "Deep dive into Web Developerment 2.0 & Advance Tech ",
                     type: "Workshop"
                   },
                   {
-                    title: "DevOps & CI/CD Pipeline Training",
-                    organizer: "TechLearn Academy",
-                    date: "March 2023",
-                    description: "Comprehensive training on Docker, Kubernetes, and deployment strategies.",
-                    type: "Training"
+                    title: "BODHANTRA ",
+                    organizer: "Team Mavericks KITCOEK",
+                    date: "2024",
+                    description: "5 Days Session & Training ",
+                    type: "Sessions"
                   },
-                  {
-                    title: "UI/UX Design Thinking Workshop",
-                    organizer: "Design Guild",
-                    date: "January 2023",
-                    description: "User-centered design principles and design systems creation.",
-                    type: "Workshop"
-                  }
+                  // {
+                  //   title: "UI/UX Design Thinking Workshop",
+                  //   organizer: "Design Guild",
+                  //   date: "January 2023",
+                  //   description: "User-centered design principles and design systems creation.",
+                  //   type: "Workshop"
+                  // }
                 ].map((workshop) => (
                   <Card key={workshop.title} className="hover-lift">
                     <CardContent className="p-6">
@@ -163,49 +203,6 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Experience */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12">Experience</h3>
-          <div className="max-w-4xl mx-auto space-y-6">
-            {[
-              {
-                role: "Software Development Intern",
-                company: "TechCorp Solutions",
-                period: "Summer 2021",
-                description: "Developed responsive web applications using React and Node.js. Collaborated with senior developers on client projects.",
-                achievements: ["Built 3 client websites", "Improved page load times by 40%", "Learned agile development practices"]
-              },
-              {
-                role: "Frontend Developer Intern",
-                company: "Digital Innovations Ltd",
-                period: "Summer 2022",
-                description: "Focused on UI/UX implementation and mobile-first design principles. Worked with design team to create pixel-perfect interfaces.",
-                achievements: ["Implemented responsive designs", "Reduced development time by 25%", "Created reusable component library"]
-              }
-            ].map((exp) => (
-              <Card key={exp.role} className="hover-lift">
-                <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-semibold">{exp.role}</h4>
-                      <p className="text-primary font-medium">{exp.company}</p>
-                    </div>
-                    <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full mt-2 md:mt-0">
-                      {exp.period}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground mb-4">{exp.description}</p>
-                  <div className="space-y-1">
-                    {exp.achievements.map((achievement) => (
-                      <p key={achievement} className="text-sm text-muted-foreground">• {achievement}</p>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </div>

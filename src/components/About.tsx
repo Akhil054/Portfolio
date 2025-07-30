@@ -41,22 +41,17 @@ const About = () => {
           {/* Profile Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold">Hi, I'm Alex Chen</h3>
+              <h3 className="text-2xl font-semibold">Hi, I'm Akhil Tamgaonkar</h3>
               <p className="text-muted-foreground leading-relaxed">
-                With over 5 years of experience in web development and design, I specialize in creating 
-                innovative digital experiences that seamlessly blend functionality with aesthetics. 
-                My passion lies in solving complex problems through clean, efficient code and 
-                intuitive user interfaces.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                I believe in the power of technology to transform ideas into reality, and I'm 
-                constantly exploring new tools and methodologies to stay at the forefront of 
-                the rapidly evolving digital landscape.
+                An Software Developer and photography enthusiast with a B.Tech in CSE (AI & ML) from KITCOEK, Kolhapur. 
+                I'm skilled in HTML, CSS, JavaScript, Java , Python with a passion for creating impactful software and expressing creativity through my lens. 
+                <br />
+                As a core member of Team Mavericks, I’ve led technical events and community outreach, blending leadership with collaboration. I'm a fast learner, creative thinker, and always ready to take on new challenges.              
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"].map((tech) => (
+              {[ "Java", "JavaScript", "React", "Node.js", "Web Tech", "SalesForce CRM"].map((tech) => (
                 <span 
                   key={tech}
                   className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
@@ -72,16 +67,18 @@ const About = () => {
             <h3 className="text-2xl font-semibold mb-6">Education</h3>
             {[
               {
-                degree: "Bachelor of Computer Science",
-                school: "University of Technology",
-                period: "2018 - 2022",
-                description: "Specialized in Software Engineering and Web Development. Graduated with honors."
+                degree: "B.Tech In CSE (AIML)",
+                school: "KIT's College of Engineering",
+                period: "2021 - 2025",
+                description: "Specialized in Atificial Intelligence and Machine Learning,with A Grade ",
+
               },
               {
-                degree: "Full Stack Web Development Bootcamp",
-                school: "Tech Academy",
-                period: "2022",
-                description: "Intensive 6-month program covering modern web technologies and frameworks."
+                degree: "High School",
+                school: "DYP Shantiniketan Jr. College",
+                period: "2019 - 2021",
+                description: "CGPA - 7.5"
+
               }
             ].map((edu) => (
               <Card key={edu.degree} className="hover-lift">

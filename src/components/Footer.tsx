@@ -4,9 +4,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "#", label: "Email" },
+    { icon: Github, href: "https://github.com/Akhil054", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/akhil-tamgaonkar-100096192/", label: "LinkedIn" },
+    { icon: Mail, href: "akhil.tamgaonkar@gmail.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -23,11 +23,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-gradient">Alex Chen</h3>
-            <p className="text-muted-foreground max-w-md">
-              Creative developer passionate about building innovative digital experiences 
-              that make a lasting impact.
-            </p>
+            <h3 className="text-2xl font-bold text-gradient">Akhil Tamgaonkar</h3>
             <div className="flex space-x-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
@@ -45,7 +41,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="flex space-x-4">
               {quickLinks.map(({ label, href }) => (
                 <li key={label}>
                   <a
@@ -62,24 +58,18 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="font-semibold mb-4">Let's Work Together</h4>
-            <p className="text-muted-foreground mb-4">
-              I'm always interested in new opportunities and exciting projects.
-            </p>
             <a
               href="mailto:alex.chen@example.com"
               className="text-primary hover:text-primary-glow transition-smooth font-medium"
             >
-              alex.chen@example.com
+              akhil.tamgaonkar@gmail.com
             </a>
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">
-            © {currentYear} Alex Chen. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-sm flex items-center mt-4 md:mt-0">
-            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> and React
+        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-center items-center">
+          <p className="text-muted-foreground text-sm" >
+            © {currentYear} Akhil Tamgaonkar. All rights reserved.
           </p>
         </div>
       </div>

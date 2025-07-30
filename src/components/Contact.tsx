@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from "emailjs-com";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,11 +16,29 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   toast.success("Message sent successfully! I'll get back to you soon.");
+  //   setFormData({ name: "", email: "", subject: "", message: "" });
+  // };
+
+   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully! I'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    emailjs.send(
+      "service_wl9xkut",     // e.g., "service_123abc"
+      "template_13hp09o",    // e.g., "template_xyz"
+      formData,              // form data should match your template variables
+      "-04ML5_5nh3VDOzlS"      // e.g., "user_ABC123"
+    ).then(() => {
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    }).catch((error) => {
+      toast.error("Failed to send message. Try again later.");
+      console.error("EmailJS Error:", error);
+    });
   };
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -31,19 +51,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "alex.chen@example.com",
-      href: "mailto:alex.chen@example.com"
+      value: "akhil.tamgaonkar@gmail.com",
+      href: "mailto:akhil.tamgaonkar@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+91 9921821468",
+      href: "tel:+91 9921821468"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Kolhapur, India",
       href: "#"
     }
   ];
@@ -55,9 +75,9 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Let's <span className="text-gradient">Connect</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          {/* <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to bring your ideas to life? Let's discuss your next project
-          </p>
+          </p> */}
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -80,7 +100,7 @@ const Contact = () => {
               </a>
             ))}
 
-            <div className="mt-8 p-6 bg-gradient-hero rounded-lg border border-border">
+            {/* <div className="mt-8 p-6 bg-gradient-hero rounded-lg border border-border">
               <h4 className="font-semibold mb-2">Ready to start a project?</h4>
               <p className="text-sm text-muted-foreground mb-4">
                 I'm available for freelance work and consulting opportunities.
@@ -88,7 +108,7 @@ const Contact = () => {
               <Button variant="gradient" size="sm" className="w-full">
                 Schedule a Call
               </Button>
-            </div>
+            </div> */}
           </div>
 
           {/* Contact Form */}
@@ -111,13 +131,15 @@ const Contact = () => {
                     </div>
                     <div>
                       <Input
-                        name="email"
-                        type="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
+                          name="email"
+                          type="email"
+                          placeholder="Your Email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                          title="Please enter a valid email address"
+                        />
                     </div>
                   </div>
                   

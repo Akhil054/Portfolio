@@ -29,7 +29,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-gradient">
-            Alex Chen
+            Akhil Tamgaonkar
           </div>
 
           {/* Desktop Navigation */}
@@ -44,9 +44,9 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
-            <Button variant="gradient" size="sm">
+            {/* <Button variant="gradient" size="sm">
               Let's Talk
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -73,11 +73,11 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <div className="px-4 pt-2">
+            {/* <div className="px-4 pt-2">
               <Button variant="gradient" size="sm" className="w-full">
                 Let's Talk
               </Button>
-            </div>
+            </div> */}
           </div>
         )}
       </div>

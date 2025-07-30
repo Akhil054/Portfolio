@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/Purple.jpg";
+import aboutMeImg from "@/assets/abttmee.jpeg"; // if using alias like @
 
 const Hero = () => {
   return (
@@ -41,13 +42,13 @@ const Hero = () => {
             <div className="relative group">
               <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-elegant hover-lift">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                  alt="Alex Chen - Creative Developer"
+                  src={aboutMeImg}
+                  alt="Akhil Tamgaonkar - Creative Developer"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute -inset-1 rounded-full bg-gradient-primary opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300"></div>
+              <div className="absolute -inset-1 rounded-full transition-opacity duration-300"></div>
             </div>
           </div>
 
@@ -55,31 +56,34 @@ const Hero = () => {
           <div className="order-1 lg:order-2 text-center lg:text-left">
             <div className="mb-6">
               <h1 className="text-5xl md:text-6xl font-bold mb-4">
-                Creative{" "}
-                <span className="text-gradient">Developer</span>
+                Software{" "}
+                <span className="text-gradient"> Developer</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+              {/* <p className="text-xl md:text-2xl text-muted-foreground mb-8">
                 I craft digital experiences that blend innovative design with cutting-edge technology
-              </p>
+              </p> */}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
-              <Button variant="hero" className="group">
-                View My Work
-                <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="hover-lift">
-                <Download className="w-5 h-5 mr-2" />
-                Download CV
-              </Button>
-            </div>
+                <a
+                  href="/Akhil_Tamgaonkar.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Akhil_Tamgaonkar.pdf"
+                >
+                  <Button variant="outline" size="lg" className="hover-lift">
+                    <Download className="w-5 h-5 mr-2" />
+                    Download CV
+                  </Button>
+                </a>
+              </div>
 
             {/* Social Links */}
             <div className="flex justify-center lg:justify-start space-x-6">
               {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "#", label: "Email" },
+                { icon: Github, href: "https://github.com/Akhil054", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/akhil-tamgaonkar-100096192/", label: "LinkedIn" },
+                { icon: Mail, href: "akhil.tamgaonkar@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
